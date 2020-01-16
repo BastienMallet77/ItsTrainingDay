@@ -20,7 +20,7 @@ import sopra.projet.ItsTrainingDay.repository.DegreeRepository;
 
 @RestController
 @RequestMapping("/degree")
-@CrossOrigin
+@CrossOrigin("*")
 public class DegreeRestController {
 
 	@Autowired
@@ -35,7 +35,7 @@ public class DegreeRestController {
 	}
 	
 	@GetMapping("/{id}")
-	public Degree find(@PathVariable Long id) throws Exception //TODO throws ?
+	public Degree find(@PathVariable Long id)
 	{ 
 		Optional<Degree> opt = degreeRepo.findById(id);
 
