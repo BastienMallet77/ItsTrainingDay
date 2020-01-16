@@ -34,7 +34,7 @@ public class ExerciceRestController {
 	}
 	
 	@GetMapping("/{id}")
-	public Exercice find(@PathVariable Long id) throws Exception 
+	public Exercice find(@PathVariable Long id)
 	{
 		Optional<Exercice> opt = exerciceRepo.findById(id);
 		
