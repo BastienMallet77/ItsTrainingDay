@@ -36,7 +36,7 @@ public class SportRestController {
 		return sports;
 	}
 	
-	@GetMapping("")
+	@GetMapping("/{id}")
 	@JsonView(Views.ViewSport.class)
 	public Sport find(@PathVariable Long id) {
 		Optional<Sport> opt = sportRepo.findById(id);
