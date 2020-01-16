@@ -48,9 +48,6 @@ public @Data class Program {
 		private Specialisation specialisation; 
 		
 		@ManyToOne
-		private InProgress progressing;
-		
-		@ManyToOne
 		private InProgress inProgress;
 		
 		public Program() {
