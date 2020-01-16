@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.projet.ItsTrainingDay.exception.NotFoundException;
 import sopra.projet.ItsTrainingDay.model.Exercice;
+import sopra.projet.ItsTrainingDay.model.Views;
 import sopra.projet.ItsTrainingDay.repository.ExerciceRepository;
 
 @RestController
@@ -27,6 +30,7 @@ public class ExerciceRestController {
 	private ExerciceRepository exerciceRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewExercice.class)
 	public List<Exercice> list()
 	{
 		List<Exercice> exercices = exerciceRepo.findAll();
@@ -34,6 +38,7 @@ public class ExerciceRestController {
 	}
 	
 	@GetMapping("/{id}")
+	@JsonView(Views.ViewExercice.class)
 	public Exercice find(@PathVariable Long id)
 	{
 		Optional<Exercice> opt = exerciceRepo.findById(id);
@@ -48,6 +53,7 @@ public class ExerciceRestController {
 	}
 	
 	@PostMapping("")
+	@JsonView(Views.ViewExercice.class)
 	public Exercice create(@RequestBody Exercice exercice) 
 	{
 		exercice = exerciceRepo.save(exercice);
@@ -55,6 +61,7 @@ public class ExerciceRestController {
 	}
 	
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewExercice.class)
 	public Exercice update(@RequestBody Exercice exercice, @PathVariable Long id) 
 	{
 		exercice = exerciceRepo.save(exercice);

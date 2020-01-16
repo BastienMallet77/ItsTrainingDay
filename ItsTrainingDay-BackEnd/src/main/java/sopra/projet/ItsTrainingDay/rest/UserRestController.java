@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.projet.ItsTrainingDay.exception.NotFoundException;
 import sopra.projet.ItsTrainingDay.model.User;
+import sopra.projet.ItsTrainingDay.model.Views;
 import sopra.projet.ItsTrainingDay.repository.UserRepository;
 
 @RestController
@@ -27,12 +30,14 @@ public class UserRestController {
 	private UserRepository userRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewUser.class)
 	public List<User> list() {
 		List<User> users = userRepo.findAll();
 		return users;
 	}
 	
 	@GetMapping("/{id}")
+	@JsonView(Views.ViewUser.class)
 	public User find(@PathVariable Long id) {
 		Optional<User> opt = userRepo.findById(id);
 		if (opt.isPresent()) {
@@ -43,12 +48,14 @@ public class UserRestController {
 	}
 	
 	@PostMapping("")
+	@JsonView(Views.ViewUser.class)
 	public User create (@RequestBody User user) {
 		user = userRepo.save(user);
 		return user; 
 	}
 	
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewUser.class)
 	public User update(@RequestBody User user, @PathVariable Long id) {
 		user = userRepo.save(user); 
 		return user; 

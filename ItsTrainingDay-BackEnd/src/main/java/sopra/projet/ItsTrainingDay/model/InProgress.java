@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
 import sopra.projet.ItsTrainingDay.model.Views.ViewInProgress;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "InProgress")
 public @Data class InProgress {
