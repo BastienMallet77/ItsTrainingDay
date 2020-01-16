@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import sopra.projet.ItsTrainingDay.exception.NotFoundException;
 import sopra.projet.ItsTrainingDay.model.Exercice;
 import sopra.projet.ItsTrainingDay.repository.ExerciceRepository;
 
@@ -42,7 +43,7 @@ public class ExerciceRestController {
 			return opt.get();
 		}else 
 		{
-			throw new Exception();
+			throw new NotFoundException();
 		}
 	}
 	
