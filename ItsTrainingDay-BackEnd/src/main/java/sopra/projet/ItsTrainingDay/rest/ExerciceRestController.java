@@ -20,7 +20,7 @@ import sopra.projet.ItsTrainingDay.repository.ExerciceRepository;
 
 @RestController
 @RequestMapping("/exercice")
-@CrossOrigin
+@CrossOrigin("*")
 public class ExerciceRestController {
 
 	@Autowired
