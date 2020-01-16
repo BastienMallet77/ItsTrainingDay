@@ -30,14 +30,14 @@ public class LevelRestController {
 	private LevelRepository levelRepo;
 
 	@GetMapping("")
-	@JsonView(Views.ViewLevel.class)
+//	@JsonView(Views.ViewLevel.class)
 	public List<Level> list() {
 		List<Level>  levels = levelRepo.findAll();
 		return levels;
 	}
 	
 	@GetMapping("/{id}")
-	@JsonView(Views.ViewLevel.class)
+//	@JsonView(Views.ViewLevel.class)
 	public Level find(@PathVariable Long id) {
 		Optional<Level> opt = levelRepo.findById(id);
 		if (opt.isPresent()) {
@@ -48,14 +48,14 @@ public class LevelRestController {
 	}
 	
 	@PostMapping("")
-	@JsonView(Views.ViewLevel.class)
+//	@JsonView(Views.ViewLevel.class)
 	public Level create (@RequestBody Level level) {
 		level = levelRepo.save(level);
 		return level; 
 	}
 	
 	@PutMapping("/{id}")
-	@JsonView(Views.ViewLevel.class)
+//	@JsonView(Views.ViewLevel.class)
 	public Level update(@RequestBody Level level, @PathVariable Long id) {
 		level = levelRepo.save(level); 
 		return level; 
