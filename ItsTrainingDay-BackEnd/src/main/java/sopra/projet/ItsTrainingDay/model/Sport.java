@@ -12,6 +12,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import lombok.Data;
 
 @Entity
@@ -22,22 +24,28 @@ public @Data class Sport {
 	private Long id;
 	@Version
 	private int version;
+	@JsonView(Views.ViewCommon.class)
 	private String sportName;
+	@JsonView(Views.ViewCommon.class)
 	private String sportDescription;
 	
 	@OneToMany(mappedBy = "sport")
+	@JsonView(Views.ViewSport.class)
 	private List<Program> programs = new ArrayList<Program>(); 
 	
 	@OneToMany(mappedBy = "sport")
+	@JsonView(Views.ViewSport.class)
 	private List<Specialisation> specialisations = new ArrayList<Specialisation>(); 
 	
 	@ManyToMany
 	@JoinTable(name="sport_level",
 	joinColumns = @JoinColumn(name="sport_id"),
 	inverseJoinColumns = @JoinColumn(name="level_id"))
+	@JsonView(Views.ViewSport.class)
 	private List<Level> levels = new ArrayList<Level>();
 	
 	@OneToMany(mappedBy = "sport")
+	@JsonView(Views.ViewSport.class)
 	private List<Degree> degreeSport = new ArrayList<Degree>();
 	
 	public Sport() {

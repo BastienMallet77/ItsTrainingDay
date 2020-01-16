@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import lombok.Data;
 
 @Entity
@@ -27,27 +29,39 @@ public @Data class User {
 	private Long id;
 	@Version
 	private int version;
+	@JsonView(Views.ViewCommon.class)
 	private String firstName;
+	@JsonView(Views.ViewCommon.class)
 	private String lastName;
+	@JsonView(Views.ViewCommon.class)
 	private String userName;
+	@JsonView(Views.ViewCommon.class)
 	private String email;
+	@JsonView(Views.ViewCommon.class)
 	private String password;
+	@JsonView(Views.ViewCommon.class)
 	private Date birthDate;
 	@Enumerated (EnumType.STRING)
-	private Erole role; 
+	@JsonView(Views.ViewCommon.class)
+	private Erole role;
+	@JsonView(Views.ViewCommon.class)
 	private boolean commercial;
+	@JsonView(Views.ViewCommon.class)
 	private boolean isDisactivated; 
 	
 	@ManyToMany
 	@JoinTable(name="user_program",
 	joinColumns = {@JoinColumn(name="user_id")},
 	inverseJoinColumns = @JoinColumn(name="program_id"))
+	@JsonView(Views.ViewUser.class)
 	private List<Program> programs = new ArrayList<Program>(); 
 	
 	@OneToMany(mappedBy = "userProgressing")
+	@JsonView(Views.ViewUser.class)
 	private List<InProgress> inProgress = new ArrayList<InProgress>(); 
 	
 	@OneToMany(mappedBy = "usercertified")
+	@JsonView(Views.ViewUser.class)
 	private List<Degree> degreesCoach = new ArrayList<Degree>();;
 	
 	public User() {

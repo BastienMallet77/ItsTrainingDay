@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import lombok.Data;
 
 @Entity
@@ -16,11 +18,14 @@ public @Data class Degree {
 	private Long id;
 	@Version
 	private int version;
+	@JsonView(Views.ViewCommon.class)
 	private boolean certificate;
 	
+	@JsonView(Views.ViewDegree.class)
 	@ManyToOne
 	private User usercertified;
 	
+	@JsonView(Views.ViewDegree.class)
 	@ManyToOne
 	private Sport sport;
 	
@@ -32,6 +37,4 @@ public @Data class Degree {
 		super();
 		this.certificate = certificate;
 	}
-	
-	
 }
