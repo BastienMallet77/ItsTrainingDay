@@ -22,7 +22,7 @@ import sopra.projet.ItsTrainingDay.model.Views;
 import sopra.projet.ItsTrainingDay.repository.ProgramRepository;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/program")
 @CrossOrigin("*")
 public class ProgramRestController {
 
