@@ -18,8 +18,11 @@ public class Views {
 		public static class ViewLevel extends ViewCommon {}
 			
 		public static class ViewProgram extends ViewCommon {}
+		public static class ViewProgramDetail extends ViewProgram {}
+		
 			
 		public static class ViewSession extends ViewCommon {}
+		public static class ViewSessionDetail extends ViewSession {}
 			
 		public static class ViewSpecialisation extends ViewCommon {}
 			
