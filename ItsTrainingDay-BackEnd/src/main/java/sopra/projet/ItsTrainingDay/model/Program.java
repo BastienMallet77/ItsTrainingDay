@@ -64,6 +64,7 @@ public @Data class Program {
 		private Specialisation specialisation; 
 		
 		@ManyToOne
+		@JsonView(Views.ViewProgram.class)
 		private InProgress inProgress;
 		
 		public Program() {
