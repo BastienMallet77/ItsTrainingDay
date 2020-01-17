@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import sopra.projet.ItsTrainingDay.exception.NotFoundException;
+import sopra.projet.ItsTrainingDay.model.Erole;
 import sopra.projet.ItsTrainingDay.model.User;
 import sopra.projet.ItsTrainingDay.model.Views;
 import sopra.projet.ItsTrainingDay.repository.UserRepository;
@@ -64,5 +65,10 @@ public class UserRestController {
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
 		userRepo.deleteById(id);
+	}
+	@GetMapping("/roles")
+	public  Erole[] roles(){
+		return Erole.values();
+		
 	}
 }
