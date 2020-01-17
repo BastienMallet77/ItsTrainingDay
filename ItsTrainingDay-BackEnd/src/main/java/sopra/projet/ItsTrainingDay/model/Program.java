@@ -43,11 +43,11 @@ public @Data class Program {
 		private boolean isDone;
 		
 		@ManyToMany(mappedBy = "programs")
-		@JsonView(Views.ViewProgram.class)
+		@JsonView(Views.ViewProgramDetail.class)
 		private List<User> users = new ArrayList<User>(); 
 		
 		@OneToMany(mappedBy = "program")
-		@JsonView(Views.ViewProgram.class)
+		@JsonView(Views.ViewProgramDetail.class)
 		private List<Session> sessions = new ArrayList<Session>(); 
 		
 		@ManyToOne
