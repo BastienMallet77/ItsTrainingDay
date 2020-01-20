@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
@@ -29,13 +29,13 @@ public @Data class Level {
 	@JsonView(Views.ViewCommon.class)
 	private String levelDescription;
 	
-	@ManyToMany (mappedBy = "levels")
+	@ManyToOne
 	@JsonView(Views.ViewLevel.class)
-	private List<Sport> sports = new ArrayList<Sport>(); 
+	private Sport sport; 
 	
-	@ManyToMany (mappedBy = "levelss")
+	@ManyToOne
 	@JsonView(Views.ViewLevel.class)
-	private List<Specialisation> specialisations = new ArrayList<Specialisation>(); 
+	private Specialisation specialisation; 
 	
 	@OneToMany (mappedBy = "level")
 	@JsonView(Views.ViewLevel.class)

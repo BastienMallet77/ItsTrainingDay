@@ -25,6 +25,7 @@ public class Views {
 		public static class ViewSessionDetail extends ViewSession {}
 			
 		public static class ViewSpecialisation extends ViewCommon {}
+		public static class ViewSpecialisationSport extends ViewCommon {}
 			
 		public static class ViewSport extends ViewCommon {}
 			

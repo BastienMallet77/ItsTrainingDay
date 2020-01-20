@@ -6,9 +6,6 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
@@ -39,10 +36,7 @@ public @Data class Sport {
 	@JsonView(Views.ViewSport.class)
 	private List<Specialisation> specialisations = new ArrayList<Specialisation>(); 
 	
-	@ManyToMany
-	@JoinTable(name="sport_level",
-	joinColumns = @JoinColumn(name="sport_id"),
-	inverseJoinColumns = @JoinColumn(name="level_id"))
+	@OneToMany(mappedBy = "sport")
 	@JsonView(Views.ViewSport.class)
 	private List<Level> levels = new ArrayList<Level>();
 	

@@ -60,7 +60,7 @@ public class UserRestController {
 	public User update(@RequestBody User user, @PathVariable Long id) {
 		user = userRepo.save(user); 
 		return user; 
-	}
+	}	
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
