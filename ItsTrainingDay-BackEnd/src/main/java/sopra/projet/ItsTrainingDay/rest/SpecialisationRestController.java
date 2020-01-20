@@ -48,6 +48,12 @@ public class SpecialisationRestController {
 			throw new NotFoundException();
 		}
 	}
+	@GetMapping("/{id}/specs")
+	@JsonView(Views.ViewSpecialisation.class)
+	public List<Specialisation> listSpec(@PathVariable Long id){
+		List<Specialisation> specs = specialisationRepo.findAllBySport(id);
+		return specs;
+	}
 
 	@PostMapping("")
 	@JsonView(Views.ViewSpecialisation.class)

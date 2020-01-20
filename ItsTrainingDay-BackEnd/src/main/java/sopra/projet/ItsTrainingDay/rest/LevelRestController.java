@@ -47,6 +47,13 @@ public class LevelRestController {
 		}
 	}
 	
+	@GetMapping("/{id}/levels")
+	@JsonView(Views.ViewSport.class)
+	public List<Level> listLevels(@PathVariable Long id){
+		List <Level> levels = levelRepo.findAllBySport(id);
+		return levels;
+	}
+	
 	@PostMapping("")
 	@JsonView(Views.ViewLevel.class)
 	public Level create (@RequestBody Level level) {
