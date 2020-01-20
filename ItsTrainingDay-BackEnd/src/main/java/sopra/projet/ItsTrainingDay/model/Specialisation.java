@@ -36,12 +36,9 @@ public @Data class Specialisation {
 	@JsonView(Views.ViewSpecialisation.class)
 	private Sport sport; 
 	
-	@ManyToMany
-	@JoinTable(name="Specialisation_level",
-	joinColumns = {@JoinColumn(name="Specialisation_id")},
-	inverseJoinColumns = @JoinColumn(name="level_id"))
+	@OneToMany (mappedBy = "specialisation")
 	@JsonView(Views.ViewSpecialisation.class)
-	private List<Level> levelss = new ArrayList<Level>(); 
+	private List<Level> levelss = new ArrayList<Level>();
 	
 	@OneToMany(mappedBy = "specialisation")
 	@JsonView(Views.ViewSpecialisation.class)
