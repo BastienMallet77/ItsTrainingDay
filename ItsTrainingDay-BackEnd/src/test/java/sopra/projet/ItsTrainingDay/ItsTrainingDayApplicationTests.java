@@ -147,6 +147,17 @@ class ItsTrainingDayApplicationTests {
 		prog2.setUsers(users);
 		prog3.setUsers(users);
 		
+		sportRepo.save(muscu);
+		sportRepo.save(judo);
+		
+		masse.setSport(muscu);
+		explo.setSport(muscu);
+		seche.setSport(muscu);
+		
+		speRepo.save(masse);
+		speRepo.save(explo);
+		speRepo.save(seche);
+		
 		progRepo.save(prog1);
 		progRepo.save(prog2);
 		progRepo.save(prog3);
