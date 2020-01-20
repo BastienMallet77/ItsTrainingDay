@@ -74,16 +74,24 @@ class ItsTrainingDayApplicationTests {
 		Program prog2 = new Program("Muscu pour la prise de masse", "Musclez vous", 12, 3, new Date(), false, true);
 		Program prog3 = new Program("Muscu pour l'explosivité", "Travaillez votre force et votre vitesse", 12, 3, new Date(), true, false);
 		
-		Level level1 = new Level("Niveau 1", "Pour les débutants");
-		Level level2 = new Level("Niveau 2", "Pour les confirmés");
-		Level level3 = new Level("Niveau 3", "Pour les experts"); 
+		Level level1m = new Level("Niveau 1", "Pour les débutants de la prise de masse");
+		Level level1s = new Level("Niveau 1", "Pour les débutants de la sèche");
+		Level level1e = new Level("Niveau 1", "Pour les débutants de l'explosivité");
+		Level level2m = new Level("Niveau 2", "Pour les confirmés de la prise de masse");
+		Level level2s = new Level("Niveau 2", "Pour les confirmés de la sèche");
+		Level level2e = new Level("Niveau 2", "Pour les confirmés de l'explosivité");
+		Level level3m = new Level("Niveau 3", "Pour les experts de la prise de masse"); 
+		Level level3s = new Level("Niveau 3", "Pour les experts de la sèche"); 
+		Level level3e = new Level("Niveau 3", "Pour les experts de l'explosivité"); 
 		
 		InProgress inprog1 = new InProgress(new Date(), new Date(), 24);
 		InProgress inprog2 = new InProgress(new Date(), new Date(), 42);
 		InProgress inprog3 = new InProgress(new Date(), new Date(), 68);
+		InProgress inprog4 = new InProgress(new Date(), new Date(), 78);
+		InProgress inprog5 = new InProgress(new Date(), new Date(), 90);
 		
 		Exercice exo1 = new Exercice("Traction", "attrapper la barre et se tracter"); 
-		Exercice exo2 = new Exercice("Tirage", "Tirer la bare verticalement"); 
+		Exercice exo2 = new Exercice("Tirage", "Tirer la barre verticalement"); 
 		Exercice exo3 = new Exercice("Rowing", "Buste penché, en tire l'haltère à soi"); 
 		
 		Degree deg1 = new Degree(true); 
@@ -95,47 +103,18 @@ class ItsTrainingDayApplicationTests {
 		programs.add(prog2);
 		programs.add(prog3);
 		
-		List<Degree> degrees = new ArrayList<Degree>(); 
-		degrees.add(deg1);
-		degrees.add(deg2);
-		degrees.add(deg3);
-		
-		List<InProgress> inprogs = new ArrayList<InProgress>(); 
-		inprogs.add(inprog1);
-		inprogs.add(inprog2);
-		inprogs.add(inprog3);
-		
-		List<Specialisation> specs = new ArrayList<Specialisation>(); 
-		specs.add(explo);
-		specs.add(masse);
-		specs.add(seche);
-		
-		List<Level> levels = new ArrayList<Level>();
-		levels.add(level1);
-		levels.add(level2);
-		levels.add(level3);
-		
-		List<Exercice> exos = new ArrayList<Exercice>();
-		exos.add(exo1);
-		exos.add(exo2);
-		exos.add(exo3);
-		
-		List<Session> sessions = new ArrayList<Session>();
-		sessions.add(session1);
-		sessions.add(session2);
-		sessions.add(session3);
-		sessions.add(session4);
-		
 		List<User> users = new ArrayList<User>(); 
 		users.add(user1);
 		users.add(user2);
 		users.add(user3);
 		users.add(user4);
 		users.add(user5);
-		
-		List<Sport> sports = new ArrayList<Sport>(); 
-		sports.add(muscu);
-		sports.add(judo);
+
+		userRepo.save(user1);
+		userRepo.save(user2);
+		userRepo.save(user3);
+		userRepo.save(user4);
+		userRepo.save(user5);
 		
 		user1.setPrograms(programs);
 		user2.setPrograms(programs);
@@ -158,15 +137,114 @@ class ItsTrainingDayApplicationTests {
 		speRepo.save(explo);
 		speRepo.save(seche);
 		
+		level1e.setSpecialisation(explo);
+		level2e.setSpecialisation(explo);
+		level3e.setSpecialisation(explo);
+		level1m.setSpecialisation(masse);
+		level2m.setSpecialisation(masse);
+		level3m.setSpecialisation(masse);
+		level1s.setSpecialisation(seche);
+		level2s.setSpecialisation(seche);
+		level3s.setSpecialisation(seche);
+		
+		level1e.setSport(muscu);
+		level2e.setSport(muscu);
+		level3e.setSport(muscu);
+		level1m.setSport(muscu);
+		level2m.setSport(muscu);
+		level3m.setSport(muscu);
+		level1s.setSport(muscu);
+		level2s.setSport(muscu);
+		level3s.setSport(muscu);
+		
+		levelRepo.save(level1e);
+		levelRepo.save(level2e);
+		levelRepo.save(level3e);
+		levelRepo.save(level1m);
+		levelRepo.save(level2m);
+		levelRepo.save(level3m);
+		levelRepo.save(level1s);
+		levelRepo.save(level2s);
+		levelRepo.save(level3s);
+		
+		inprog1.setUserProgressing(user1);
+		inprog2.setUserProgressing(user2);
+		inprog3.setUserProgressing(user3);
+		inprog4.setUserProgressing(user4);
+		inprog5.setUserProgressing(user5);
+		
+		inprogRepo.save(inprog1);
+		inprogRepo.save(inprog2);
+		inprogRepo.save(inprog3);
+		inprogRepo.save(inprog4);
+		inprogRepo.save(inprog5);
+		
+		prog1.setInProgress(inprog1);
+		prog2.setInProgress(inprog2);
+		prog3.setInProgress(inprog3);
+		
+		prog1.setLevel(level1m);
+		prog2.setLevel(level2m);
+		prog3.setLevel(level3m);
+		
+		prog1.setSpecialisation(seche);
+		prog2.setSpecialisation(masse);
+		prog3.setSpecialisation(explo);
+		
+		prog1.setSport(muscu);
+		prog2.setSport(muscu);
+		prog3.setSport(muscu);
+		
+		prog1.setUsers(users);
+		prog2.setUsers(users);
+		prog3.setUsers(users);
+		
 		progRepo.save(prog1);
 		progRepo.save(prog2);
 		progRepo.save(prog3);
 		
-		userRepo.save(user1); 
-		userRepo.save(user2); 
-		userRepo.save(user3); 
-		userRepo.save(user4); 
-		userRepo.save(user5); 
+		user1.setPrograms(programs);
+		user2.setPrograms(programs);
+		user3.setPrograms(programs);
+		user4.setPrograms(programs);
+		user5.setPrograms(programs);
+		
+		userRepo.save(user1);
+		userRepo.save(user2);
+		userRepo.save(user3);
+		userRepo.save(user4);
+		userRepo.save(user5);
+		
+		session1.setProgram(prog2);
+		session2.setProgram(prog2);
+		session3.setProgram(prog1);
+		session4.setProgram(prog3);
+		
+		sesRepo.save(session1);
+		sesRepo.save(session2);
+		sesRepo.save(session3);
+		sesRepo.save(session4);
+		
+		exo1.setSession(session1);
+		exo2.setSession(session2);
+		exo3.setSession(session3);
+		
+		exoRepo.save(exo1);
+		exoRepo.save(exo2);
+		exoRepo.save(exo3);
+		
+		deg1.setSport(muscu);
+		deg2.setSport(muscu);
+		deg3.setSport(judo);
+		
+		deg1.setUsercertified(user5);
+		deg2.setUsercertified(user3);
+		deg3.setUsercertified(user4);
+		
+		degreeRepo.save(deg1);
+		degreeRepo.save(deg2);
+		degreeRepo.save(deg3);
+		
 	}
 
 }
