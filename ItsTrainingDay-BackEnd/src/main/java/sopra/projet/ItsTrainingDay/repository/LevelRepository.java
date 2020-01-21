@@ -10,6 +10,6 @@ import sopra.projet.ItsTrainingDay.model.Level;
 
 public interface LevelRepository extends JpaRepository<Level, Long> {
 	
-	@Query("select l from Level l join l.sport s where s.id = :id")
-	List<Level> findAllBySport(@Param("id") Long id);
+	@Query("select l from Level l join l.specialisation s where s.id = :id")
+	List<Level> findAllBySpec(@Param("id") Long id);
 }
