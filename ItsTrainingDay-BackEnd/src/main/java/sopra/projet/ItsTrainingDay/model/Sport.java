@@ -55,5 +55,12 @@ public @Data class Sport {
 		this.sportDescription = sportDescription;
 	}
 	
+	public Sport(String sportName, String sportDescription, String img) {
+		super();
+		this.sportName = sportName;
+		this.sportDescription = sportDescription;
+		this.img = img;
+	}
+	
 	
 }

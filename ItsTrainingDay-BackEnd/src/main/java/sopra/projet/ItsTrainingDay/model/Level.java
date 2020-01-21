@@ -54,5 +54,12 @@ public @Data class Level {
 		this.levelDescription = levelDescription;
 	}
 	
+	public Level(String levelName, String levelDescription, String img) {
+		super();
+		this.levelName = levelName;
+		this.levelDescription = levelDescription;
+		this.img = img;
+	}
+	
 	
 }
