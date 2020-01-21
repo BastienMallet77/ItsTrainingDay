@@ -30,7 +30,7 @@ public class UserRestController {
 	@Autowired
 	private UserRepository userRepo;
 	
-	@GetMapping("/connect/{userName}/{password}")
+	@GetMapping("/{userName}/{password}")
 	@JsonView(Views.ViewUser.class)
 	public User findLogin(@PathVariable String userName, @PathVariable String password) 
 	{
