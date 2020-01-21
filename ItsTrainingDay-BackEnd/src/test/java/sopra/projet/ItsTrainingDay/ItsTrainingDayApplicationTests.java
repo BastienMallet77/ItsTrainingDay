@@ -60,10 +60,11 @@ class ItsTrainingDayApplicationTests {
 		
 		Sport muscu = new Sport("Musculation", "Pour se contruire un corps d'Apollon"); 
 		Sport judo = new Sport("Judo", "Sport préféré d'Apollon"); 
-		
+
 		Specialisation masse = new Specialisation("Masse", "Prise de muscle");
 		Specialisation seche = new Specialisation("Sèche", "Perte de poids");
 		Specialisation explo = new Specialisation("Explosivité", "Travail force/vitesse");
+		Specialisation kata = new Specialisation("Kata", "Préparation kata");
 		
 		Session session1 = new Session("Dos", "Entrainement du DOS", 1);
 		Session session2 = new Session("Pec", "Entrainement des PECS", 2);
@@ -74,13 +75,13 @@ class ItsTrainingDayApplicationTests {
 		Program prog2 = new Program("Muscu pour la prise de masse", "Musclez vous", 12, 3, new Date(), false, true);
 		Program prog3 = new Program("Muscu pour l'explosivité", "Travaillez votre force et votre vitesse", 12, 3, new Date(), true, false);
 		
-		Level level1m = new Level("Niveau 1", "Pour les débutants de la prise de masse");
+		Level level1m = new Level("Niveau 1", "Pour les débutants de la prise de masse","../assets/images/Muscu/Masse/0.jpg");
 		Level level1s = new Level("Niveau 1", "Pour les débutants de la sèche");
 		Level level1e = new Level("Niveau 1", "Pour les débutants de l'explosivité");
-		Level level2m = new Level("Niveau 2", "Pour les confirmés de la prise de masse");
+		Level level2m = new Level("Niveau 2", "Pour les confirmés de la prise de masse", "../assets/images/Muscu/Masse/1.jpg");
 		Level level2s = new Level("Niveau 2", "Pour les confirmés de la sèche");
 		Level level2e = new Level("Niveau 2", "Pour les confirmés de l'explosivité");
-		Level level3m = new Level("Niveau 3", "Pour les experts de la prise de masse"); 
+		Level level3m = new Level("Niveau 3", "Pour les experts de la prise de masse", "../assets/images/Muscu/Masse/2.jpeg"); 
 		Level level3s = new Level("Niveau 3", "Pour les experts de la sèche"); 
 		Level level3e = new Level("Niveau 3", "Pour les experts de l'explosivité"); 
 		
@@ -132,10 +133,12 @@ class ItsTrainingDayApplicationTests {
 		masse.setSport(muscu);
 		explo.setSport(muscu);
 		seche.setSport(muscu);
+		kata.setSport(judo);
 		
 		speRepo.save(masse);
 		speRepo.save(explo);
 		speRepo.save(seche);
+		speRepo.save(kata);
 		
 		level1e.setSpecialisation(explo);
 		level2e.setSpecialisation(explo);
