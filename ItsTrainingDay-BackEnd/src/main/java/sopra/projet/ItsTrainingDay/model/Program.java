@@ -41,6 +41,8 @@ public @Data class Program {
 		private boolean isValidated;
 		@JsonView(Views.ViewProgram.class)
 		private boolean isDone;
+		@JsonView(Views.ViewProgram.class)
+		private Integer rate = null; 
 		
 		@ManyToMany(mappedBy = "programs")
 		@JsonView(Views.ViewProgramDetail.class)
