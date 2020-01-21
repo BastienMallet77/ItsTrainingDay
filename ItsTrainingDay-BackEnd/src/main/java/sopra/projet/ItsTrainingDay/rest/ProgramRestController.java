@@ -62,7 +62,12 @@ public class ProgramRestController {
 		}
 	}
 	
-	
+	@GetMapping("/{id}/programs")
+	@JsonView(Views.ViewProgram.class)
+	public List<Program> listPrograms(@PathVariable Long id){
+		List<Program> programs = programRepo.findAllByLevel(id);
+		return programs;
+	}
 
 	@PostMapping("")
 	@JsonView(Views.ViewProgram.class)
