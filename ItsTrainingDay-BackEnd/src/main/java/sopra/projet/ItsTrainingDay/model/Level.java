@@ -61,5 +61,4 @@ public @Data class Level {
 		this.img = img;
 	}
 	
-	
 }
