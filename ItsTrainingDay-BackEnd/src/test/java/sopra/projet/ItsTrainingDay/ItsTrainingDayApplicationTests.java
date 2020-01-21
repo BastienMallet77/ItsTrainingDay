@@ -58,8 +58,13 @@ class ItsTrainingDayApplicationTests {
 		User user4 = new User("Bastien", "MALLET", "Barbu", "bastien@training.com", "qwerty", new Date(), Erole.USER, true, false); 
 		User user5 = new User("Berengère", "VALLIER", "Beren", "beren@training.com", "azertyuiop", new Date(), Erole.COACH, true, false); 
 		
+<<<<<<< HEAD
+		Sport muscu = new Sport("Musculation", "Pour se contruire un corps d'Apollon"); 
+		Sport judo = new Sport("Judo", "Sport préféré d'Apollon"); 
+=======
 		Sport muscu = new Sport("Musculation", "Pour se contruire un corps d'Appollon", "../assets/images/Muscu/Muscu.jpg"); 
 		Sport judo = new Sport("Judo", "Sport préféré d'Appollon"); 
+>>>>>>> master
 		
 		Specialisation masse = new Specialisation("Masse", "Prise de muscle");
 		Specialisation seche = new Specialisation("Sèche", "Perte de poids");
@@ -91,7 +96,7 @@ class ItsTrainingDayApplicationTests {
 		InProgress inprog4 = new InProgress(new Date(), new Date(), 78);
 		InProgress inprog5 = new InProgress(new Date(), new Date(), 90);
 		
-		Exercice exo1 = new Exercice("Traction", "attrapper la barre et se tracter"); 
+		Exercice exo1 = new Exercice("Traction", "Attraper la barre et se tracter"); 
 		Exercice exo2 = new Exercice("Tirage", "Tirer la barre verticalement"); 
 		Exercice exo3 = new Exercice("Rowing", "Buste penché, on tire l'haltère à soi"); 
 		
