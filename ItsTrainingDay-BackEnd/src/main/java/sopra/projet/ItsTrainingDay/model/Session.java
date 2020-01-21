@@ -35,6 +35,9 @@ public @Data class Session {
 	@JsonView(Views.ViewSession.class)
 	private Program program; 
 	
+	@JsonView(Views.ViewSession.class)
+	private Boolean isDone; 
+	
 	@OneToMany (mappedBy = "session")
 	@JsonView(Views.ViewSession.class)
 	private List<Exercice> exercices = new ArrayList<Exercice>(); 
