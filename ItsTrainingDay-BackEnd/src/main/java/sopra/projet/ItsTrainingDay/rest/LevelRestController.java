@@ -50,7 +50,7 @@ public class LevelRestController {
 	@GetMapping("/{id}/levels")
 	@JsonView(Views.ViewSport.class)
 	public List<Level> listLevels(@PathVariable Long id){
-		List <Level> levels = levelRepo.findAllBySport(id);
+		List <Level> levels = levelRepo.findAllBySpec(id);
 		return levels;
 	}
 	

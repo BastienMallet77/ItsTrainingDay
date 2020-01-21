@@ -28,6 +28,8 @@ public @Data class Level {
 	private String levelName;
 	@JsonView(Views.ViewCommon.class)
 	private String levelDescription;
+	@JsonView(Views.ViewCommon.class)
+	private String img;
 	
 	@ManyToOne
 	@JsonView(Views.ViewLevel.class)
@@ -50,6 +52,13 @@ public @Data class Level {
 		super();
 		this.levelName = levelName;
 		this.levelDescription = levelDescription;
+	}
+	
+	public Level(String levelName, String levelDescription, String img) {
+		super();
+		this.levelName = levelName;
+		this.levelDescription = levelDescription;
+		this.img = img;
 	}
 	
 	
