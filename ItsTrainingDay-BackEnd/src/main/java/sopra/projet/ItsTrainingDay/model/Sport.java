@@ -27,6 +27,8 @@ public @Data class Sport {
 	private String sportName;
 	@JsonView(Views.ViewCommon.class)
 	private String sportDescription;
+	@JsonView(Views.ViewCommon.class)
+	private String img;
 	
 	@OneToMany(mappedBy = "sport")
 	@JsonView(Views.ViewSport.class)

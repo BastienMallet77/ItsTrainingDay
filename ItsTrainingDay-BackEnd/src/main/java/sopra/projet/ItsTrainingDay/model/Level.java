@@ -28,6 +28,8 @@ public @Data class Level {
 	private String levelName;
 	@JsonView(Views.ViewCommon.class)
 	private String levelDescription;
+	@JsonView(Views.ViewCommon.class)
+	private String img;
 	
 	@ManyToOne
 	@JsonView(Views.ViewLevel.class)
