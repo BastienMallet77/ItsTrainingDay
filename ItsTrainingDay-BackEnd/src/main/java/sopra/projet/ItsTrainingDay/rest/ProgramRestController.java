@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import sopra.projet.ItsTrainingDay.exception.NotFoundException;
 import sopra.projet.ItsTrainingDay.model.Program;
 import sopra.projet.ItsTrainingDay.model.Views;
+import sopra.projet.ItsTrainingDay.model.Views.ViewProgramDetail;
 import sopra.projet.ItsTrainingDay.repository.ProgramRepository;
 
 @RestController
@@ -48,6 +49,20 @@ public class ProgramRestController {
 			throw new NotFoundException();
 		}
 	}
+	
+	@GetMapping("/{id}/detail")
+	@JsonView(Views.ViewProgramDetail.class)
+	public Program findDetail(@PathVariable Long id) {
+		Program program = programRepo.findByIdWithSessions(id);
+
+		if (program != null) {
+			return program;
+		} else {
+			throw new NotFoundException();
+		}
+	}
+	
+	
 
 	@PostMapping("")
 	@JsonView(Views.ViewProgram.class)
