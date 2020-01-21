@@ -29,6 +29,14 @@ public class UserRestController {
 
 	@Autowired
 	private UserRepository userRepo;
+	
+	@GetMapping("/connect/{userName}/{password}")
+	@JsonView(Views.ViewUser.class)
+	public User findLogin(@PathVariable String userName, @PathVariable String password) 
+	{
+		User user = userRepo.findByUserNameAndPassword(userName, password);
+		return user; 
+	}
 
 	@GetMapping("")
 	@JsonView(Views.ViewUser.class)
@@ -66,6 +74,7 @@ public class UserRestController {
 	public void delete(@PathVariable Long id) {
 		userRepo.deleteById(id);
 	}
+	
 	@GetMapping("/roles")
 	public  Erole[] roles(){
 		return Erole.values();

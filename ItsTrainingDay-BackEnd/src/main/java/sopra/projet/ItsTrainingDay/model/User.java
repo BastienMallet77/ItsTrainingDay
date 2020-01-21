@@ -52,8 +52,8 @@ public @Data class User {
 	private boolean isDisactivated; 
 	
 	@ManyToMany
-	@JoinTable(name="user_program",
-	joinColumns = {@JoinColumn(name="user_id")},
+	@JoinTable(name="coach_program",
+	joinColumns = {@JoinColumn(name="coach_id")},
 	inverseJoinColumns = @JoinColumn(name="program_id"))
 	@JsonView(Views.ViewUser.class)
 	private List<Program> programs = new ArrayList<Program>(); 
