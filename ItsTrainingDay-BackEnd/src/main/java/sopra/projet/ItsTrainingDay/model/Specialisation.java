@@ -28,6 +28,8 @@ public @Data class Specialisation {
 	private String speName;
 	@JsonView(Views.ViewCommon.class)
 	private String speDescription;
+	@JsonView(Views.ViewCommon.class)
+	private String img;
 	
 	@ManyToOne
 	@JsonView(Views.ViewSpecialisation.class)
