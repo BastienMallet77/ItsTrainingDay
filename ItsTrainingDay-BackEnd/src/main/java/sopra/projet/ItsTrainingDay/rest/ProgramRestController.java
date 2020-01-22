@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonView;
 import sopra.projet.ItsTrainingDay.exception.NotFoundException;
 import sopra.projet.ItsTrainingDay.model.Program;
 import sopra.projet.ItsTrainingDay.model.Views;
-import sopra.projet.ItsTrainingDay.model.Views.ViewProgramDetail;
 import sopra.projet.ItsTrainingDay.repository.ProgramRepository;
 
 @RestController

@@ -42,7 +42,9 @@ public @Data class Program {
 		@JsonView(Views.ViewProgram.class)
 		private boolean isDone;
 		@JsonView(Views.ViewProgram.class)
-		private Integer rate = null; 
+		private Float rate; 
+		@JsonView(Views.ViewProgram.class)
+		private Integer nbRate = null; 
 		
 		@ManyToMany(mappedBy = "programs")
 		@JsonView(Views.ViewProgramDetail.class)
