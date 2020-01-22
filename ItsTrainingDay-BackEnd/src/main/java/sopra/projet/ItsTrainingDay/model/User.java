@@ -64,7 +64,13 @@ public @Data class User {
 	
 	@OneToMany(mappedBy = "usercertified")
 	@JsonView(Views.ViewUser.class)
-	private List<Degree> degreesCoach = new ArrayList<Degree>();;
+	private List<Degree> degreesCoach = new ArrayList<Degree>();
+	
+	@JsonView(Views.ViewUser.class)
+	private Integer nbSessionFinished = 0;
+	
+	@JsonView(Views.ViewUser.class)
+	private Integer nbProgramFinished = 0;
 	
 	public User() {
 		super();
@@ -196,6 +202,22 @@ public @Data class User {
 
 	public void setPrograms(List<Program> programs) {
 		this.programs = programs;
+	}
+
+	public Integer getNbSessionFinished() {
+		return nbSessionFinished;
+	}
+
+	public void setNbSessionFinished(Integer nbSessionFinished) {
+		this.nbSessionFinished = nbSessionFinished;
+	}
+
+	public Integer getNbProgramFinished() {
+		return nbProgramFinished;
+	}
+
+	public void setNbProgramFinished(Integer nbProgramFinished) {
+		this.nbProgramFinished = nbProgramFinished;
 	}
 
 
