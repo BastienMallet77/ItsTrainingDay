@@ -42,6 +42,9 @@ public @Data class Program {
 		@JsonView(Views.ViewProgram.class)
 		private boolean isDone;
 		@JsonView(Views.ViewProgram.class)
+		private Float rate; 
+		@JsonView(Views.ViewProgram.class)
+		private Integer nbRate = null; 
 		private Integer rate = null; 
 		@JsonView(Views.ViewProgram.class)
 		private Long creatorId = null; 
@@ -65,11 +68,12 @@ public @Data class Program {
 		@ManyToOne
 		@JoinColumn(name = "spe_id")
 		@JsonView(Views.ViewProgram.class)
-		private Specialisation specialisation; 
-		
-		@ManyToOne
+		private Specialisation specialisation;
+
 		@JsonView(Views.ViewProgram.class)
-		private InProgress inProgress;
+		@OneToMany(mappedBy = "program")
+		private List<InProgress> inProgresses = new ArrayList<InProgress>();
+		
 		
 		public Program() {
 			super();

@@ -175,17 +175,13 @@ class ItsTrainingDayApplicationTests {
 		inprog3.setUserProgressing(user3);
 		inprog4.setUserProgressing(user4);
 		inprog5.setUserProgressing(user5);
-		
+
 		inprogRepo.save(inprog1);
 		inprogRepo.save(inprog2);
 		inprogRepo.save(inprog3);
 		inprogRepo.save(inprog4);
 		inprogRepo.save(inprog5);
-		
-		prog1.setInProgress(inprog1);
-		prog2.setInProgress(inprog2);
-		prog3.setInProgress(inprog3);
-		
+			
 		prog1.setLevel(level1m);
 		prog2.setLevel(level2m);
 		prog3.setLevel(level3m);
@@ -205,6 +201,21 @@ class ItsTrainingDayApplicationTests {
 		progRepo.save(prog1);
 		progRepo.save(prog2);
 		progRepo.save(prog3);
+		
+		
+		
+		inprog1.setProgram(prog1);
+		inprog2.setProgram(prog2);
+		inprog3.setProgram(prog3);
+		inprog4.setProgram(prog2);
+		inprog5.setProgram(prog1);
+		
+		inprogRepo.save(inprog1);
+		inprogRepo.save(inprog2);
+		inprogRepo.save(inprog3);
+		inprogRepo.save(inprog4);
+		inprogRepo.save(inprog5);
+		
 		
 		user1.setPrograms(programs);
 		user2.setPrograms(programs);
