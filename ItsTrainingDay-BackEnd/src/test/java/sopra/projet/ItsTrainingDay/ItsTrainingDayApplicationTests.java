@@ -85,11 +85,11 @@ class ItsTrainingDayApplicationTests {
 		Level level3s = new Level("Niveau 3", "Pour les experts de la sèche"); 
 		Level level3e = new Level("Niveau 3", "Pour les experts de l'explosivité"); 
 		
-		InProgress inprog1 = new InProgress(new Date(), new Date(), 24);
-		InProgress inprog2 = new InProgress(new Date(), new Date(), 42);
-		InProgress inprog3 = new InProgress(new Date(), new Date(), 68);
-		InProgress inprog4 = new InProgress(new Date(), new Date(), 78);
-		InProgress inprog5 = new InProgress(new Date(), new Date(), 90);
+		InProgress inprog1 = new InProgress(new Date(), 24);
+		InProgress inprog2 = new InProgress(new Date(), 42);
+		InProgress inprog3 = new InProgress(new Date(), 68);
+		InProgress inprog4 = new InProgress(new Date(), 78);
+		InProgress inprog5 = new InProgress(new Date(), 90);
 		
 		Exercice exo1 = new Exercice("Traction", "Attraper la barre et se tracter"); 
 		Exercice exo2 = new Exercice("Tirage", "Tirer la barre verticalement"); 
@@ -175,6 +175,7 @@ class ItsTrainingDayApplicationTests {
 		inprog3.setUserProgressing(user3);
 		inprog4.setUserProgressing(user4);
 		inprog5.setUserProgressing(user5);
+		inprog3.setUserProgressing(user5);
 
 		inprogRepo.save(inprog1);
 		inprogRepo.save(inprog2);

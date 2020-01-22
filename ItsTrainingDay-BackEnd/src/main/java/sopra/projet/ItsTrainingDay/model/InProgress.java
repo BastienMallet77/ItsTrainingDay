@@ -49,10 +49,9 @@ public @Data class InProgress {
 		super();
 	}
 	
-	public InProgress(Date beginingDate, Date endDate, Integer progression) {
+	public InProgress(Date beginingDate, Integer progression) {
 		super();
 		this.beginingDate = beginingDate;
-		this.endDate = endDate;
 		this.progression = progression;
 	}
 	
