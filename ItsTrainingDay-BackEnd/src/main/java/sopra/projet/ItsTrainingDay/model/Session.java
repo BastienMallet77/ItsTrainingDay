@@ -36,7 +36,7 @@ public @Data class Session {
 	private Program program; 
 	
 	@JsonView(Views.ViewSession.class)
-	private Boolean isDone; 
+	private Boolean isDone = false; 
 	
 	@OneToMany (mappedBy = "session")
 	@JsonView(Views.ViewSession.class)
