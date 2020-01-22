@@ -63,11 +63,12 @@ public @Data class Program {
 		@ManyToOne
 		@JoinColumn(name = "spe_id")
 		@JsonView(Views.ViewProgram.class)
-		private Specialisation specialisation; 
-		
-		@ManyToOne
+		private Specialisation specialisation;
+
 		@JsonView(Views.ViewProgram.class)
-		private InProgress inProgress;
+		@OneToMany(mappedBy = "program")
+		private List<InProgress> inProgresses = new ArrayList<InProgress>();
+		
 		
 		public Program() {
 			super();
