@@ -14,5 +14,4 @@ public interface ProgramRepository extends JpaRepository<Program, Long> {
 	
 	@Query("select p from Program p join p.level l where l.id = :id")
 	List<Program> findAllByLevel(@Param("id")Long id);
-	
 }
