@@ -84,6 +84,120 @@ public @Data class User {
 		this.isDisactivated = isDisactivated;
 	}
 
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public Erole getRole() {
+		return role;
+	}
+
+	public void setRole(Erole role) {
+		this.role = role;
+	}
+
+	public boolean isCommercial() {
+		return commercial;
+	}
+
+	public void setCommercial(boolean commercial) {
+		this.commercial = commercial;
+	}
+
+	public boolean isDisactivated() {
+		return isDisactivated;
+	}
+
+	public void setDisactivated(boolean isDisactivated) {
+		this.isDisactivated = isDisactivated;
+	}
+
+	public List<InProgress> getInProgress() {
+		return inProgress;
+	}
+
+	public void setInProgress(List<InProgress> inProgress) {
+		this.inProgress = inProgress;
+	}
+
+	public List<Degree> getDegreesCoach() {
+		return degreesCoach;
+	}
+
+	public void setDegreesCoach(List<Degree> degreesCoach) {
+		this.degreesCoach = degreesCoach;
+	}
+
+	public List<Program> getPrograms() {
+		return programs;
+	}
+
+	public void setPrograms(List<Program> programs) {
+		this.programs = programs;
+	}
+
 
 	
 	

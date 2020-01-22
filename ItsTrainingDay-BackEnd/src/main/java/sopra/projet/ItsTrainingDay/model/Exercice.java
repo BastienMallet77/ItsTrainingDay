@@ -39,6 +39,47 @@ public @Data class Exercice {
 		super();
 		this.exerciceName = exerciceName;
 		this.exerciceText = exerciceText;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getExerciceName() {
+		return exerciceName;
+	}
+
+	public void setExerciceName(String exerciceName) {
+		this.exerciceName = exerciceName;
+	}
+
+	public String getExerciceText() {
+		return exerciceText;
+	}
+
+	public void setExerciceText(String exerciceText) {
+		this.exerciceText = exerciceText;
+	}
+
+	public Session getSession() {
+		return session;
+	}
+
+	public void setSession(Session session) {
+		this.session = session;
 	}	
+	
 	
 }

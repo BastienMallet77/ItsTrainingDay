@@ -52,6 +52,70 @@ public @Data class Specialisation {
 		this.speName = speName;
 		this.speDescription = speDescription;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getSpeName() {
+		return speName;
+	}
+
+	public void setSpeName(String speName) {
+		this.speName = speName;
+	}
+
+	public String getSpeDescription() {
+		return speDescription;
+	}
+
+	public void setSpeDescription(String speDescription) {
+		this.speDescription = speDescription;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public Sport getSport() {
+		return sport;
+	}
+
+	public void setSport(Sport sport) {
+		this.sport = sport;
+	}
+
+	public List<Level> getLevelss() {
+		return levelss;
+	}
+
+	public void setLevelss(List<Level> levelss) {
+		this.levelss = levelss;
+	}
+
+	public List<Program> getProgramss() {
+		return programss;
+	}
+
+	public void setProgramss(List<Program> programss) {
+		this.programss = programss;
+	}
 	
 	
 

@@ -50,6 +50,54 @@ public @Data class Session {
 		this.name = name;
 		this.text = text;
 		this.nbSession = nbSession;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public Integer getNbSession() {
+		return nbSession;
+	}
+	public void setNbSession(Integer nbSession) {
+		this.nbSession = nbSession;
+	}
+	public Program getProgram() {
+		return program;
+	}
+	public void setProgram(Program program) {
+		this.program = program;
+	}
+	public Boolean getIsDone() {
+		return isDone;
+	}
+	public void setIsDone(Boolean isDone) {
+		this.isDone = isDone;
+	}
+	public List<Exercice> getExercices() {
+		return exercices;
+	}
+	public void setExercices(List<Exercice> exercices) {
+		this.exercices = exercices;
 	} 
 	
 	

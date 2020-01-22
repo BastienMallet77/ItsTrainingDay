@@ -54,6 +54,62 @@ public @Data class InProgress {
 		this.beginingDate = beginingDate;
 		this.progression = progression;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public Date getBeginingDate() {
+		return beginingDate;
+	}
+
+	public void setBeginingDate(Date beginingDate) {
+		this.beginingDate = beginingDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public Integer getProgression() {
+		return progression;
+	}
+
+	public void setProgression(Integer progression) {
+		this.progression = progression;
+	}
+
+	public User getUserProgressing() {
+		return userProgressing;
+	}
+
+	public void setUserProgressing(User userProgressing) {
+		this.userProgressing = userProgressing;
+	}
+
+	public Program getProgram() {
+		return program;
+	}
+
+	public void setProgram(Program program) {
+		this.program = program;
+	}
 	
 	
 	

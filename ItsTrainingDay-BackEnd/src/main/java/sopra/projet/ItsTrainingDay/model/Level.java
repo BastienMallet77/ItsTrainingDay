@@ -60,5 +60,70 @@ public @Data class Level {
 		this.levelDescription = levelDescription;
 		this.img = img;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getLevelName() {
+		return levelName;
+	}
+
+	public void setLevelName(String levelName) {
+		this.levelName = levelName;
+	}
+
+	public String getLevelDescription() {
+		return levelDescription;
+	}
+
+	public void setLevelDescription(String levelDescription) {
+		this.levelDescription = levelDescription;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public Sport getSport() {
+		return sport;
+	}
+
+	public void setSport(Sport sport) {
+		this.sport = sport;
+	}
+
+	public Specialisation getSpecialisation() {
+		return specialisation;
+	}
+
+	public void setSpecialisation(Specialisation specialisation) {
+		this.specialisation = specialisation;
+	}
+
+	public List<Program> getPrograms() {
+		return programs;
+	}
+
+	public void setPrograms(List<Program> programs) {
+		this.programs = programs;
+	}
+	
 	
 }

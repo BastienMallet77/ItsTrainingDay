@@ -39,4 +39,46 @@ public @Data class Degree {
 		super();
 		this.certificate = certificate;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public boolean isCertificate() {
+		return certificate;
+	}
+
+	public void setCertificate(boolean certificate) {
+		this.certificate = certificate;
+	}
+
+	public User getUsercertified() {
+		return usercertified;
+	}
+
+	public void setUsercertified(User usercertified) {
+		this.usercertified = usercertified;
+	}
+
+	public Sport getSport() {
+		return sport;
+	}
+
+	public void setSport(Sport sport) {
+		this.sport = sport;
+	}
+	
+	
 }
