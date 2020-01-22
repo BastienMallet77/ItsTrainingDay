@@ -40,9 +40,10 @@ public @Data class InProgress {
 	@ManyToOne
 	private User userProgressing;
 	
+	@ManyToOne
 	@JsonView(Views.ViewInProgress.class)
-	@OneToMany(mappedBy = "inProgress")
-	private List<Program> progInProgress = new ArrayList<Program>();
+	private Program program;
+
 	
 	public InProgress() {
 		super();

@@ -12,8 +12,6 @@ import lombok.Data;
 import sopra.projet.ItsTrainingDay.model.Views.ViewExercice;
 
 
-
-
 @Entity
 public @Data class Exercice {
 	
