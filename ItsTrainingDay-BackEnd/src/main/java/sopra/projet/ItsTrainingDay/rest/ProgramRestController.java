@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonView;
 import sopra.projet.ItsTrainingDay.exception.NotFoundException;
 import sopra.projet.ItsTrainingDay.model.Program;
 import sopra.projet.ItsTrainingDay.model.Views;
-import sopra.projet.ItsTrainingDay.model.Views.ViewProgramDetail;
 import sopra.projet.ItsTrainingDay.repository.ProgramRepository;
 
 @RestController
@@ -66,6 +65,13 @@ public class ProgramRestController {
 	@JsonView(Views.ViewProgram.class)
 	public List<Program> listPrograms(@PathVariable Long id){
 		List<Program> programs = programRepo.findAllByLevel(id);
+		return programs;
+	}
+	
+	@GetMapping("/{id}/creator")
+	@JsonView(Views.ViewProgram.class)
+	public List<Program> programs(@PathVariable Long id){
+		List<Program> programs = programRepo.findAllByCreator(id);
 		return programs;
 	}
 

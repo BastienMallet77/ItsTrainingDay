@@ -42,7 +42,12 @@ public @Data class Program {
 		@JsonView(Views.ViewProgram.class)
 		private boolean isDone;
 		@JsonView(Views.ViewProgram.class)
+		private Float rate; 
+		@JsonView(Views.ViewProgram.class)
+		private Integer nbRate = null; 
 		private Integer rate = null; 
+		@JsonView(Views.ViewProgram.class)
+		private Long creatorId = null; 
 		
 		@ManyToMany(mappedBy = "programs")
 		@JsonView(Views.ViewProgramDetail.class)
@@ -83,6 +88,18 @@ public @Data class Program {
 			this.nbValidation = nbValidation;
 			this.creationDate = creationDate;
 			this.isValidated = isValidated;
+		}
+		
+		public Program(String name, String description, int duration, int nbValidation, Date creationDate,
+				boolean isValidated, boolean isDone, long creatorId) {
+			super();
+			this.name = name;
+			this.description = description;
+			this.duration = duration;
+			this.nbValidation = nbValidation;
+			this.creationDate = creationDate;
+			this.isValidated = isValidated;
 			this.isDone = isDone;
+			this.creatorId = creatorId;
 		}
 }
