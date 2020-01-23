@@ -78,19 +78,32 @@ public @Data class Program {
 			super();
 		}
 		
-		public Program(String name, String description, int duration, int nbValidation, Date creationDate,
-				boolean isValidated, boolean isDone) {
-			super();
-			this.name = name;
-			this.description = description;
-			this.duration = duration;
-			this.nbValidation = nbValidation;
-			this.creationDate = creationDate;
-			this.isValidated = isValidated;
-		}
+//		public Program(String name, String description, int duration, int nbValidation, Date creationDate,
+//				boolean isValidated, boolean isDone) {
+//			super();
+//			this.name = name;
+//			this.description = description;
+//			this.duration = duration;
+//			this.nbValidation = nbValidation;
+//			this.creationDate = creationDate;
+//			this.isValidated = isValidated;
+//		}
+//		
+//		public Program(String name, String description, int duration, int nbValidation, Date creationDate,
+//				boolean isValidated, boolean isDone, long creatorId) {
+//			super();
+//			this.name = name;
+//			this.description = description;
+//			this.duration = duration;
+//			this.nbValidation = nbValidation;
+//			this.creationDate = creationDate;
+//			this.isValidated = isValidated;
+//			this.isDone = isDone;
+//			this.creatorId = creatorId;
+//		}
 		
 		public Program(String name, String description, int duration, int nbValidation, Date creationDate,
-				boolean isValidated, boolean isDone, long creatorId) {
+				boolean isValidated, boolean isDone, float rate) {
 			super();
 			this.name = name;
 			this.description = description;
@@ -99,7 +112,7 @@ public @Data class Program {
 			this.creationDate = creationDate;
 			this.isValidated = isValidated;
 			this.isDone = isDone;
-			this.creatorId = creatorId;
+			this.rate = rate;
 		}
 
 		public Long getId() {
