@@ -17,4 +17,7 @@ public interface ProgramRepository extends JpaRepository<Program, Long> {
 	
 	@Query("select p from Program p where creatorId = :id")
 	List<Program> findAllByCreator(@Param("id")Long id);
+	
+	@Query("select p from Program p where isValidated=true and creatorId = :id")
+	List<Program> findAllValidatedByCreator(@Param("id")Long id);
 }

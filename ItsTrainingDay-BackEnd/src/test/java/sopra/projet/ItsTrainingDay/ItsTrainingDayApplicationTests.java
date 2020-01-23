@@ -56,7 +56,7 @@ class ItsTrainingDayApplicationTests {
 		User user2 = new User("François", "MARION", "Francouz", "françois@training.com", "azerty", new Date(), Erole.ADMIN, false, true); 
 		User user3 = new User("Bastien", "DRID", "Batou", "batou@training.com", "g", new Date(), Erole.USER, true, false); 
 		User user4 = new User("Bastien", "MALLET", "Barbu", "bastien@training.com", "qwerty", new Date(), Erole.USER, true, false); 
-		User user5 = new User("Berengère", "VALLIER", "Beren", "beren@training.com", "azertyuiop", new Date(), Erole.COACH, true, false); 
+		User user5 = new User("Berengère", "VALLIER", "Beren", "beren@training.com", "azertyuiop", new Date(), Erole.COACH, true, false);
 		
 		Sport muscu = new Sport("Musculation", "Pour se contruire un corps d'Apollon", "../assets/images/Muscu/Muscu.jpg"); 
 		Sport judo = new Sport("Judo", "Sport préféré d'Apollon"); 
@@ -71,9 +71,9 @@ class ItsTrainingDayApplicationTests {
 		Session session3 = new Session("Jambe", "Entrainement des JAMBES", 3);
 		Session session4 = new Session("Epaule", "Entrainement des EPAULES", 4);
 		
-		Program prog1 = new Program("Muscu pour la sèche", "Perdez du poids avant l'été", 12, 3, new Date(), true, true);
-		Program prog2 = new Program("Muscu pour la prise de masse", "Musclez vous", 12, 3, new Date(), false, true);
-		Program prog3 = new Program("Muscu pour l'explosivité", "Travaillez votre force et votre vitesse", 12, 3, new Date(), true, false);
+		Program prog1 = new Program("Muscu pour la sèche", "perdez du poids avant l'été", 12, 3, new Date(), true, true, 3.5f);
+		Program prog2 = new Program("Muscu pour la prise de masse", "Musclez vous", 12, 3, new Date(), false, true, 4.5f);
+		Program prog3 = new Program("Muscu pour l'explosivité", "Travaillez votre force et votre vitesse", 12, 3, new Date(), true, false, 4.5f);
 		
 		Level level1m = new Level("Niveau 1", "Pour les débutants de la prise de masse","../assets/images/Muscu/Masse/0.jpg");
 		Level level1s = new Level("Niveau 1", "Pour les débutants de la sèche");
@@ -199,11 +199,13 @@ class ItsTrainingDayApplicationTests {
 		prog2.setUsers(users);
 		prog3.setUsers(users);
 		
+		prog1.setCreatorId(user1.getId());
+		prog2.setCreatorId(user1.getId());
+		prog3.setCreatorId(user5.getId());
+		
 		progRepo.save(prog1);
 		progRepo.save(prog2);
 		progRepo.save(prog3);
-		
-		
 		
 		inprog1.setProgram(prog1);
 		inprog2.setProgram(prog2);
@@ -216,7 +218,6 @@ class ItsTrainingDayApplicationTests {
 		inprogRepo.save(inprog3);
 		inprogRepo.save(inprog4);
 		inprogRepo.save(inprog5);
-		
 		
 		user1.setPrograms(programs);
 		user2.setPrograms(programs);
@@ -259,7 +260,6 @@ class ItsTrainingDayApplicationTests {
 		degreeRepo.save(deg1);
 		degreeRepo.save(deg2);
 		degreeRepo.save(deg3);
-		
-	}
 
+	}
 }
