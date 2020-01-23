@@ -71,7 +71,7 @@ class ItsTrainingDayApplicationTests {
 		Session session3 = new Session("Jambe", "Entrainement des JAMBES", 3);
 		Session session4 = new Session("Epaule", "Entrainement des EPAULES", 4);
 		
-		Program prog1 = new Program("Muscu pour la sèche", "perdez du poids avant l'été", 12, 3, new Date(), true, true);
+		Program prog1 = new Program("Muscu pour la sèche", "Perdez du poids avant l'été", 12, 3, new Date(), true, true);
 		Program prog2 = new Program("Muscu pour la prise de masse", "Musclez vous", 12, 3, new Date(), false, true);
 		Program prog3 = new Program("Muscu pour l'explosivité", "Travaillez votre force et votre vitesse", 12, 3, new Date(), true, false);
 		
@@ -85,11 +85,11 @@ class ItsTrainingDayApplicationTests {
 		Level level3s = new Level("Niveau 3", "Pour les experts de la sèche"); 
 		Level level3e = new Level("Niveau 3", "Pour les experts de l'explosivité"); 
 		
-		InProgress inprog1 = new InProgress(new Date(), 24);
-		InProgress inprog2 = new InProgress(new Date(), 42);
-		InProgress inprog3 = new InProgress(new Date(), 68);
-		InProgress inprog4 = new InProgress(new Date(), 78);
-		InProgress inprog5 = new InProgress(new Date(), 90);
+		InProgress inprog1 = new InProgress(new Date(), 0);
+		InProgress inprog2 = new InProgress(new Date(), 0);
+		InProgress inprog3 = new InProgress(new Date(), 0);
+		InProgress inprog4 = new InProgress(new Date(), 0);
+		InProgress inprog5 = new InProgress(new Date(), 0);
 		
 		Exercice exo1 = new Exercice("Traction", "Attraper la barre et se tracter"); 
 		Exercice exo2 = new Exercice("Tirage", "Tirer la barre verticalement"); 
