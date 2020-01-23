@@ -59,12 +59,12 @@ class ItsTrainingDayApplicationTests {
 		User user5 = new User("Berengère", "VALLIER", "Beren", "beren@training.com", "azertyuiop", new Date(), Erole.COACH, true, false); 
 		
 		Sport muscu = new Sport("Musculation", "Pour se contruire un corps d'Apollon", "../assets/images/Muscu/Muscu.jpg"); 
-		Sport judo = new Sport("Judo", "Sport préféré d'Apollon"); 
+		Sport judo = new Sport("Judo", "Sport préféré d'Apollon","../assets/images/Judo/Judo.PNG"); 
 		
-		Specialisation masse = new Specialisation("Masse", "Prise de muscle");
-		Specialisation seche = new Specialisation("Sèche", "Perte de poids");
-		Specialisation explo = new Specialisation("Explosivité", "Travail force/vitesse");
-		Specialisation kata = new Specialisation("Kata", "Préparation kata");
+		Specialisation masse = new Specialisation("Masse", "Prise de muscle", "../assets/images/Muscu/Spec/priseDeMasse.jpg");
+		Specialisation seche = new Specialisation("Sèche", "Perte de poids","../assets/images/Muscu/Spec/seche.jpg");
+		Specialisation explo = new Specialisation("Explosivité", "Travail force/vitesse", "../assets/images/Muscu/Spec/explo.jpg");
+		Specialisation kata = new Specialisation("Kata", "Préparation kata",  "../assets/images/Judo/Judo2.jpg/");
 		
 		Session session1 = new Session("Dos", "Entrainement du DOS", 1);
 		Session session2 = new Session("Pec", "Entrainement des PECS", 2);
