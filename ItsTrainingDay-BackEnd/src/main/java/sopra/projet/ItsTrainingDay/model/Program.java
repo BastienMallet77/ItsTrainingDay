@@ -245,8 +245,5 @@ public @Data class Program {
 
 		public void setInProgresses(List<InProgress> inProgresses) {
 			this.inProgresses = inProgresses;
-		}
-		
-		
-		
+		}	
 }
