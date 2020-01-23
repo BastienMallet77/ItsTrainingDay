@@ -52,11 +52,11 @@ class ItsTrainingDayApplicationTests {
 
 	@Test
 	void contextLoads() {
-		User user1 = new User("Albert", "DER-ARSENIAN", "Cocorico", "albert@training.com", "azertyuiop", new Date(), Erole.COACH, true, false); 
-		User user2 = new User("François", "MARION", "Francouz", "françois@training.com", "azerty", new Date(), Erole.ADMIN, false, true); 
-		User user3 = new User("Bastien", "DRID", "Batou", "batou@training.com", "g", new Date(), Erole.USER, true, false); 
-		User user4 = new User("Bastien", "MALLET", "Barbu", "bastien@training.com", "qwerty", new Date(), Erole.USER, true, false); 
-		User user5 = new User("Berengère", "VALLIER", "Beren", "beren@training.com", "azertyuiop", new Date(), Erole.COACH, true, false);
+		User user1 = new User("Albert", "DER-ARSENIAN", "Cocorico", "albert@training.com", "azertyuiop", new Date(), Erole.COACH, true, false,"../assets/images/Nous/Al.jpg"); 
+		User user2 = new User("François", "MARION", "Francouz", "françois@training.com", "azerty", new Date(), Erole.ADMIN, false, true,"../assets/images/Nous/Fr.jpg"); 
+		User user3 = new User("Bastien", "DRID", "Batou", "batou@training.com", "g", new Date(), Erole.USER, true, false,"../assets/images/Nous/Bat.jpg"); 
+		User user4 = new User("Bastien", "MALLET", "Barbu", "bastien@training.com", "qwerty", new Date(), Erole.USER, true, false,"../assets/images/Nous/Bas.jpg"); 
+		User user5 = new User("Berengère", "VALLIER", "Beren", "beren@training.com", "azertyuiop", new Date(), Erole.COACH, true, false,"../assets/images/Nous/Be.jpg");
 		
 		Sport muscu = new Sport("Musculation", "Pour se contruire un corps d'Apollon", "../assets/images/Muscu/Muscu.jpg"); 
 		Sport judo = new Sport("Judo", "Sport préféré d'Apollon","../assets/images/Judo/Judo.PNG"); 
