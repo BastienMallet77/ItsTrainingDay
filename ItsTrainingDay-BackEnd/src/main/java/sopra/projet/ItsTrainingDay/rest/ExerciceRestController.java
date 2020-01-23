@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import sopra.projet.ItsTrainingDay.exception.NotFoundException;
 import sopra.projet.ItsTrainingDay.model.Exercice;
+import sopra.projet.ItsTrainingDay.model.Specialisation;
 import sopra.projet.ItsTrainingDay.model.Views;
 import sopra.projet.ItsTrainingDay.repository.ExerciceRepository;
 
@@ -50,6 +51,13 @@ public class ExerciceRestController {
 		{
 			throw new NotFoundException();
 		}
+	}
+	
+	@GetMapping("/{id}/exos")
+	@JsonView(Views.ViewExercice.class)
+	public List<Exercice> listSpec(@PathVariable Long id){
+		List<Exercice> exos = exerciceRepo.findAllBySession(id);
+		return exos;
 	}
 	
 	@PostMapping("")

@@ -48,6 +48,7 @@ public class SpecialisationRestController {
 			throw new NotFoundException();
 		}
 	}
+	
 	@GetMapping("/{id}/specs")
 	@JsonView(Views.ViewSpecialisation.class)
 	public List<Specialisation> listSpec(@PathVariable Long id){

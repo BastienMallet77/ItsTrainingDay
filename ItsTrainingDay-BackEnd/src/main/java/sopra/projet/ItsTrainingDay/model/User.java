@@ -50,6 +50,12 @@ public @Data class User {
 	private boolean commercial;
 	@JsonView(Views.ViewCommon.class)
 	private boolean isDisactivated; 
+	@JsonView(Views.ViewCommon.class)
+	private Long sessionStop;
+	@JsonView(Views.ViewCommon.class)
+	private Long levelStop;
+	@JsonView(Views.ViewCommon.class)
+	private Long programStop;
 	
 	@ManyToMany
 	@JoinTable(name="coach_program",
