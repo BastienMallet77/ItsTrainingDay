@@ -74,6 +74,13 @@ public class ProgramRestController {
 		List<Program> programs = programRepo.findAllByCreator(id);
 		return programs;
 	}
+	
+	@GetMapping("/{id}/programsValidated")
+	@JsonView(Views.ViewProgram.class)
+	public List<Program> listProgramsValidated(@PathVariable Long id){
+		List<Program> programs = programRepo.findAllValidatedByCreator(id);
+		return programs;
+	}
 
 	@PostMapping("")
 	@JsonView(Views.ViewProgram.class)

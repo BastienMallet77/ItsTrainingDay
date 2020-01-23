@@ -56,6 +56,9 @@ public @Data class User {
 	private Long levelStop;
 	@JsonView(Views.ViewCommon.class)
 	private Long programStop;
+
+	private String img;
+
 	
 	@ManyToMany
 	@JoinTable(name="coach_program",
@@ -83,7 +86,7 @@ public @Data class User {
 	}
 
 	public User(String firstName, String lastName, String userName, String email, String password, Date birthDate,
-			Erole role, boolean commercial, boolean isDisactivated) {
+			Erole role, boolean commercial, boolean isDisactivated, String img) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -94,6 +97,7 @@ public @Data class User {
 		this.role = role;
 		this.commercial = commercial;
 		this.isDisactivated = isDisactivated;
+		this.img = img;
 	}
 
 	

@@ -116,6 +116,13 @@ public @Data class Specialisation {
 	public void setProgramss(List<Program> programss) {
 		this.programss = programss;
 	}
+
+	public Specialisation(String speName, String speDescription, String img) {
+		super();
+		this.speName = speName;
+		this.speDescription = speDescription;
+		this.img = img;
+	}
 	
 	
 
