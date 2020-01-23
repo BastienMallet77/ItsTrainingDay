@@ -71,7 +71,7 @@ class ItsTrainingDayApplicationTests {
 		Session session3 = new Session("Jambe", "Entrainement des JAMBES", 3);
 		Session session4 = new Session("Epaule", "Entrainement des EPAULES", 4);
 		
-		Program prog1 = new Program("Muscu pour la sèche", "perdez du poids avant l'été", 12, 3, new Date(), true, true, 3.5f);
+		Program prog1 = new Program("Muscu pour la sèche", "Perdez du poids avant l'été", 12, 3, new Date(), true, true, 3.5f);
 		Program prog2 = new Program("Muscu pour la prise de masse", "Musclez vous", 12, 3, new Date(), false, true, 4.5f);
 		Program prog3 = new Program("Muscu pour l'explosivité", "Travaillez votre force et votre vitesse", 12, 3, new Date(), true, false, 4.5f);
 		
